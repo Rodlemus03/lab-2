@@ -231,19 +231,41 @@ public class Driver{
                         }
                     
                     if(bloque1<contador && contador<bloque2){
-
+                        memoria.setSize(8);
+                        memoria.setBloques(128);
                     }else if(bloque2<contador && contador<bloque3){
-
+                        memoria.setSize(12);
+                        memoria.setBloques(192);
                     }else if(bloque3<contador && contador<bloque4){
-                        
+                        memoria.setSize(16);
+                        memoria.setBloques(256);
                     }else if(bloque4<contador && contador<bloque5){
-                        
+                        memoria.setSize(32);
+                        memoria.setBloques(512);
                     }else if(bloque5<contador && contador<bloque6){
-                        
+                        memoria.setSize(64);
+                        memoria.setBloques(1024);
                     }
-
+                        System.out.println("Ha aumentado el tamaño: "+memoria.getSize()+", bloques: "+memoria.getBloques());
                     }else{
-
+                        double contador2=memoria.getSize()-sizeGlobal;
+                        if(bloque1<contador2 && contador2<bloque2){
+                            memoria.setSize(4);
+                            memoria.setBloques(64);
+                        }else if(bloque2<contador2 && contador2<bloque3){
+                            memoria.setSize(8);
+                            memoria.setBloques(128);
+                        }else if(bloque3<contador2 && contador2<bloque4){
+                            memoria.setSize(12);
+                            memoria.setBloques(192);
+                        }else if(bloque4<contador2 && contador2<bloque5){
+                            memoria.setSize(16);
+                            memoria.setBloques(256);
+                        }else if(bloque5<contador2 && contador2<bloque6){
+                            memoria.setSize(32);
+                            memoria.setBloques(512);
+                        }
+                        System.out.println("Ha disminuido el tamaño: "+memoria.getSize()+", bloques: "+memoria.getBloques());
                     }
                 }else{
                     System.out.println("Por el tipo de memoria, no puede aumentarse ");
